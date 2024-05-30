@@ -1,14 +1,142 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <title>Reisebuchungs-Formular</title>
+  <head>
+    <meta charset="UTF-8">
+    <title>Reisebuchungs-Formular</title>
 
-</head>
-<body>
+  </head>
+  <body>
+    <h1>Reisebuchungs-Formular</h1>
 
-<h1>Reisebuchungs-Formular</h1>
+    <form action='https://it.bzz.ch/demo/formdata/index.php' method='post'>
+      <!-- datalist -->
+      <fieldset>
+        <label for="destination">Reiseziel:</label>
+        <input list="destinations" id="destination" name="Reiseziel" required>
+        <datalist id="destinations">
+          <option value="Zürich">
+          <option value="Genf">
+          <option value="Basel">
+          <option value="Bern">
+          <option value="Lugano">
+          <option value="Rom">
+          <option value="Mailand">
+          <option value="Venedig">
+          <option value="Florenz">
+          <option value="Neapel">
+          <option value="Bologna">
+          <option value="Turin">
+          <option value="Palermo">
+          <option value="Catania">
+          <option value="Pisa">
+          <option value="Humberto Delgado Lissabon">
+        </datalist>
+      </fieldset>
+      <!-- input -->
+      <fieldset>
+        <label>Reisezeitraum:
+          <label for='beginn'>Anfangszeitpunkt</label>
+          <input id='beginn' name='Anfangszeitpunkt' type='date' required/>
+          <label for='end'>Endzeitpunkt</label>
+          <input id='end' name='Endzeitpunkt' type='date' required/>
+          <label for="duration">Dauer der Reise (in Tagen):</label>
+          <input type="number" id="duration" name="Dauer" min="1" max="21" required/>
+        </label>
+      </fieldset>
+      <!-- input -->
+      <fieldset>
+        <label>Anzahl Personen:
+          <label for='person'>Personen</label>
+          <input id='person' name='Personen' type='number' required/>
+        </label>
+      </fieldset>
+      <!-- select optgroup -->
+      <fieldset>
+        <label>Flughäfen:
+          <select name="Flughaefen" size="6">
+            <optgroup label="Schweiz:">
+              <option label="Zürich Flughafen">ZRH</option>
+              <option label="Flughafen Genf (GVA)">GVA</option>
+              <option label="Flughafen Basel-Mulhouse-Freiburg">BSL/MLH/EAP</option>
+              <option label='Flughafen Bern-Belp'>BRN</option>
+              <option label='Flughafen Lugano-Agno'>LUG</option>
+            </optgroup>
+            <optgroup label="Italien:">
+              <option label="Flughafen Rom-Fiumicino">FCO</option>
+              <option label="Flughafen Mailand-Malpensa">MXP</option>
+              <option label="Flughafen Venedig-Marco Polo">VCE</option>
+              <option label="Flughafen Florenz">FLR</option>
+              <option label="Flughafen Neapel">NAP</option>
+              <option label="Flughafen Bologna">BLQ</option>
+              <option label="Flughafen Turin">TRN</option>
+              <option label="Flughafen Palermo">PMO</option>
+              <option label="Flughafen Catania">CTA</option>
+              <option label="Flughafen Pisa">PSA</option>
+            </optgroup>
+            <optgroup label="Lissabon">
+              <option label="Flughafen Humberto Delgado Lissabon">LIS</option>
+            </optgroup>
+          </select>
+        </label>
+      </fieldset>
+      <!-- select -->
+      <fieldset>
+        <label>Fluggesellschaft:
+          <select name="Fluggesellschaft" size="5">
+            <option>Edelweiss Air</option>
+            <option>Swiss Global Air Lines</option>
+            <option>Air Italy</option>
+            <option>ITA Airways</option>
+            <option>TAP Air Portugal</option>
+            <option>Azores Airlines</option>
+          </select>
+        </label>
+      </fieldset>
+      <!-- radiobutton -->
+      <fieldset>
+        <label>Unterkunft:
+          <input type="radio" id="hotel" name="Hotel" value="Unterkunft">
+          <label for="hotel"> Hotel</label>
+          <input type="radio" id="ferienwohnung" name="Ferienwohnung" value="Unterkunft">
+          <label for="ferienwohnung"> Ferienwohnung</label>
+          <input type="radio" id="hostel" name="Hostel" value="Unterkunft">
+          <label for="hostel"> Hostel</label>
+        </label>
+      </fieldset>
+      <!-- checkbox -->
+      <fieldset>
+        <label>Dienstleistungen:
+          <input type="checkbox" name="Dienstleistungen" value="Reiseversicherung" id="check1">
+          <label for="check1">Reiseversicherung</label>
+          <input type="checkbox" name="Dienstleistungen" value="Flughafentransfer " id="check2">
+          <label for="check2">Flughafentransfer </label>
+          <input type="checkbox" name="Dienstleistungen" value="zusätzliches Gepäck" id="check3">
+          <label for="check3">zusätzliches Gepäck</label>
+        </label>
+      </fieldset>
+      <!-- checkbox -->
+      <fieldset>
+        <label>Weitere Dienstleistungen:
+          <input type="checkbox" name="Dienstleistungen2" value="Priority-Check-In" id="check4">
+          <label for="check4">Priority-Check-In</label>
+          <input type="checkbox" name="Dienstleistungen2" value="zusätzliches Handgepäck" id="check5">
+          <label for="check5">zusätzliches Handgepäck</label>
+          <input type="checkbox" name="Dienstleistungen2" value="Buchung eines Mietwagens" id="check6">
+          <label for="check6">Buchung eines Mietwagens</label>
+        </label>
+      </fieldset>
+      <!-- input -->
+      <fieldset>
+        <label>Personen Daten:
+          <label for="email">Email </label>
+          <input type="email" id="email" name="Email" required>
+        </label>
+      </fieldset>
+      <fieldset>
+        <button type='submit'>Absenden</button>
+        <button type='reset'>Zurücksetzten</button>
+      </fieldset>
+    </form>
 
-
-</body>
+  </body>
 </html>
